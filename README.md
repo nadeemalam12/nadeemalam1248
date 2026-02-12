@@ -1,4 +1,7 @@
-# Ginger Hotels  (   https://www.gingerhotels.com/  )
+# Ginger Hotels     //  (   https://www.gingerhotels.com/  )
+
+#HomePage.jsx
+
 import React, { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight, MapPin } from "lucide-react"; // npm install lucide-react
 import { Wifi, Car, Coffee, Dumbbell } from "lucide-react";
@@ -336,7 +339,8 @@ export default Home;
 //   font-family: 'Pacifico', cursive;
 // }
 
-#AboutUS.js
+
+#AboutUS.jsx    // page_flie
 
 import React from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -602,5 +606,452 @@ const AboutUs = () => {
 };
 
 export default AboutUs;
+
+
+
+#Footer.jsx   Pagefile 
+
+import React from "react";
+
+
+const Footer = () => {
+
+    
+    const handleIconClick = (e) => {
+        e.currentTarget.style.transform = "scale(0.95)";
+        setTimeout(() => {
+            e.currentTarget.style.transform = "scale(1)";
+        }, 150);
+    };
+
+    const handleMouseEnter = (e) => {
+        e.currentTarget.style.transform = "translateX(4px)";
+    };
+
+    const handleMouseLeave = (e) => {
+        e.currentTarget.style.transform = "translateX(0)";
+    };
+
+    return(
+        <>
+        
+         {/* footer*/}
+            {/* <div className="h-0.5 bg-gradient-to-r from-[#FFA100] via-[#E11162] to-[#E11162]"></div> */}
+            <footer className="bg-[white]">
+                {/* Logo Section */}
+                <div className="px-4 sm:px-6 lg:px-8 pt-8 pb-4">
+                    <div className="max-w-7xl mx-auto">
+                        <div className="flex items-center">
+                            <div className="w-32 h-16 bg-gray-300 rounded flex items-center justify-center">
+                                <span className="text-sm font-semibold text-gray-600">HOTEL LOGO</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Main Footer Content */}
+                <div className="px-4 sm:px-6 lg:px-8 pb-8">
+                    <div className="max-w-7xl mx-auto">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
+                            {/* Social Media & Contact Section */}
+                            <div className="lg:col-span-1 space-y-6">
+                                <div>
+                                    <h2 className="text-lg font-semibold text-gray-800 mb-4 pacifico-font">FOLLOW US ON</h2>
+                                    <div className="flex space-x-3">
+                                        {/* Social Icons */}
+                                        {[
+                                            { color: "bg-blue-600", hover: "hover:bg-blue-700" },
+                                            { color: "bg-blue-800", hover: "hover:bg-blue-900" },
+                                            { color: "bg-pink-600", hover: "hover:bg-pink-700" },
+                                            { color: "bg-red-600", hover: "hover:bg-red-700" },
+                                        ].map((style, i) => (
+                                            <div
+                                                key={i}
+                                                className={`w-10 h-10 ${style.color} ${style.hover} rounded-full flex items-center justify-center transition-colors cursor-pointer`}
+                                                onClick={handleIconClick}
+                                            >
+                                                <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                                    <path d="M12 0C5.372 0 0 5.373 0 12s5.372 12 12 12 12-5.373 12-12S18.628 0 12 0z" />
+                                                </svg>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                {/* Contact Section */}
+                                <div>
+                                    <h2 className="text-lg font-semibold text-gray-800 mb-4 pacifico-font">CONTACT US</h2>
+                                    <div className="space-y-2">
+                                        <p className="text-gray-700">
+                                            <strong className="font-semibold">CALL:</strong>{" "}
+                                            <a
+                                                href="tel:8700898990"
+                                                className="hover:text-blue-600 transition-colors"
+                                                onMouseEnter={handleMouseEnter}
+                                                onMouseLeave={handleMouseLeave}
+                                            >
+                                                8700898990
+                                            </a>
+                                        </p>
+                                        <p className="text-gray-700">
+                                            <strong className="font-semibold">EMAIL:</strong>{" "}
+                                            <a
+                                                href="mailto:ssourabh.1712@gmail.com"
+                                                className="hover:text-blue-600 transition-colors break-all"
+                                                onMouseEnter={handleMouseEnter}
+                                                onMouseLeave={handleMouseLeave}
+                                            >
+                                                ssourabh.1712@gmail.com
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Quick Links Repeated Sections */}
+                            {[1, 2, 3].map((section, i) => (
+                                <div key={i} className="space-y-4">
+                                    <h3
+                                        className={`text-lg font-semibold text-gray-800 pacifico-font ${i === 0 ? "" : "invisible"
+                                            }`}
+                                    >
+                                        {i === 0 ? "Quick Links" : "Links"}
+                                    </h3>
+                                    <ul className="space-y-2">
+                                        {[
+                                            "Hotel",
+                                            "Offer",
+                                            "Neupass",
+                                            "Business Connect",
+                                            "Blog",
+                                            "Sitemap",
+                                            "About Ginger",
+                                            "Careers",
+                                        ].map((link, idx) => (
+                                            <li key={idx}>
+                                                <a
+                                                    href="#"
+                                                    className="text-black-600 hover:text-black-800 transition-colors"
+                                                    onMouseEnter={handleMouseEnter}
+                                                    onMouseLeave={handleMouseLeave}
+                                                >
+                                                    {link}
+                                                </a>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+
+                {/* Gradient Divider */}
+                <div className="h-0.5 bg-gradient-to-r from-[#FFA100] via-[#E11162] to-[#E11162]"></div>
+
+                {/* Copyright */}
+                <div className="bg-footerPink text-center py-4">
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <h4 className="text-black font-medium">Copyright © & About Krayons | 2014 - 24</h4>
+                    </div>
+                </div>
+            </footer>
+
+        </>
+    )
+}
+
+export default Footer;
+
+
+# Header.jsx     // page_File
+
+import React, { useState } from "react";
+import { FaMagnifyingGlass } from "react-icons/fa6";
+import { FaChevronDown, FaBars, FaTimes } from 'react-icons/fa';
+
+const Header = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [moreOpen, setMoreOpen] = useState(false);
+
+  return (
+    <>
+      {/* Main Navbar Container */}
+      <div className="h-[80px] w-full flex items-center justify-between px-4 shadow-md">
+        {/* Logo */}
+        <div className="w-[15%] flex items-center pl-4">
+        <a href="/"><img src="/img/Logo.svg" alt="Logo" className="w-[8.54vw] h-[2.86vw]" /></a>
+        </div>
+
+        {/* Center Menu */}
+        <div className="hidden lg:flex h-[80px] w-[60%] items-center justify-center gap-[30px] text-[13px] font-medium">
+         <a href="/"><li className="list-none cursor-pointer">Home</li></a>
+         <a href="/about"><li className="list-none cursor-pointer">About us</li></a>
+          <li className="list-none cursor-pointer">Restaurant</li>
+          <li className="list-none cursor-pointer">Service</li>
+          <li className="list-none cursor-pointer">Offer</li>
+          <li className="list-none cursor-pointer">Eat</li>
+          <li className="list-none cursor-pointer">Party</li>
+
+          {/* Dropdown */}
+          <li
+            className="list-none flex items-center cursor-pointer relative"
+            onClick={() => setMoreOpen(!moreOpen)}
+          >
+            More <FaChevronDown className="ml-[5px] mt-[2px]" />
+            {moreOpen && (
+              <ul className="absolute top-[40px] left-0 w-[200px] bg-white shadow-lg rounded-md text-black z-50">
+                <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Manage Your Bookings</li>
+                <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Contact Us</li>
+              </ul>
+            )}
+          </li>
+        </div>
+
+        {/* Right Side */}
+        <div className="hidden lg:flex h-[80px] w-[25%] items-center justify-end pr-4 text-[13px] font-medium space-x-4">
+          <FaMagnifyingGlass className="text-[17px]" />
+          <p>Login</p>
+          <p>/</p>
+          <a href="/login"><p>Admin</p></a>
+          <a href="/bookingform"><button className="rounded-[30px] px-[20px] py-[10px] bg-orange-500 text-white">
+            Book your stay
+          </button></a>
+        </div>
+
+        {/* Hamburger Menu Button */}
+        <div className="lg:hidden">
+          <button onClick={() => setMenuOpen(!menuOpen)}>
+            {menuOpen ? <FaTimes size={20} /> : <FaBars size={20} />}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Menu */}
+      {menuOpen && (
+        <div className="lg:hidden px-4 py-3 bg-white shadow-md text-sm font-medium space-y-2">
+          <ul className="space-y-2">
+            <li className="cursor-pointer">Home</li>
+            <li className="cursor-pointer">About us</li>
+            <li className="cursor-pointer">Restaurant</li>
+            <li className="cursor-pointer">Service</li>
+            <li className="cursor-pointer">Offer</li>
+            <li className="cursor-pointer">Eat</li>
+            <li className="cursor-pointer">Party</li>
+            <li>
+              <button onClick={() => setMoreOpen(!moreOpen)} className="flex items-center gap-1">
+                More <FaChevronDown />
+              </button>
+              {moreOpen && (
+                <ul className="ml-4 mt-1 space-y-1 text-gray-700">
+                  <li className="cursor-pointer">Manage Your Bookings</li>
+                  <li className="cursor-pointer">Contact Us</li>
+                </ul>
+              )}
+            </li>
+          </ul>
+
+          <div className="flex items-center gap-2 border-t pt-2">
+            <FaMagnifyingGlass className="text-[17px]" />
+            <span>Login / Logout</span>
+          </div>
+          <button className="w-full mt-2 rounded-[30px] px-4 py-2 bg-orange-500 text-white">
+            Book your stay
+          </button>
+        </div>
+      )}
+    </>
+  );
+};
+
+export default Header;
+
+#Login.jsx    // page_File
+
+import React, { useState } from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+
+const LoginForm = () => {
+    const navigate = useNavigate();
+    const [formData, setFormData] = useState({
+        email: '',
+        password: '',
+        rememberMe: false
+    });
+
+    const handleInputChange = (e) => {
+        const { id, value, type, checked } = e.target;
+        setFormData({ ...formData, [id]: type === 'checkbox' ? checked : value });
+    };
+
+    const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+
+    const submitData = async (e) => {
+        e.preventDefault();
+
+        try {
+            const response = await axios.post(`${apiUrl}/user/login`, {
+                email: formData.email,
+                password: formData.password
+            });
+
+            if (response.status === 200) {
+                alert('User logged in successfully!');
+
+                // Store user data properly based on your backend response structure
+                const userData = {
+                    email: response.data.email,
+                    name: response.data.name, // This comes from your backend
+                    userName: response.data.name, // Fallback if needed
+                    token: response.data.jwtToken,
+                    success: response.data.success
+                };
+
+                localStorage.setItem("user", JSON.stringify(userData));
+
+                // Also store the token separately if needed for API calls
+                localStorage.setItem("token", response.data.jwtToken);
+
+                navigate('/dashboard');
+                console.log("Login response:", response.data);
+            }
+        } catch (err) {
+            console.error('Login error:', err);
+            if (err.response?.data?.message) {
+                alert(err.response.data.message);
+            } else if (err.response?.data?.error) {
+                alert(err.response.data.error);
+            } else {
+                alert('Login failed');
+            }
+        }
+    };
+
+    const handleForgotPassword = () => {
+        alert('Password reset functionality would be implemented here!');
+    };
+
+    return (
+        <div className="min-h-screen w-full flex flex-col lg:flex-row">
+            <div className="w-full lg:w-1/2 flex flex-col">
+                <div className="flex justify-between items-center p-6 lg:px-24 lg:py-12">
+                   <a href="/"> <div className="flex items-center">
+                        <div className="w-8 h-8 bg-[#ff6900] rounded-full flex items-center justify-center">
+                            <span className="text-white font-bold text-sm">L</span>
+                        </div>
+                        <span className="ml-2 font-semibold text-gray-800">Logo</span>
+                    </div></a>
+                    <a href="/register">
+                        <button className="px-6 py-2 border border-[#ff6900] text-[#ff6900] rounded-lg hover:bg-[#ff6900] hover:text-white transition-colors duration-300">
+                            Sign Up
+                        </button>
+                    </a>
+                </div>
+
+                <div className="flex-1 px-6 lg:px-24 pb-8">
+                    <div className="max-w-md">
+                        <h4 className="text-sm text-gray-600 mb-2">Welcome back!</h4>
+                        <h1 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-8 pacifico-font">Please Sign In</h1>
+
+                        <form className="space-y-6" onSubmit={submitData}>
+                            <div>
+                                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                                    Email address
+                                </label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    value={formData.email}
+                                    onChange={handleInputChange}
+                                    placeholder="Enter email address"
+                                    required
+                                    className="w-full h-12 px-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#ff6900] focus:border-transparent outline-none transition-all"
+                                />
+                            </div>
+
+                            <div>
+                                <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
+                                    Password
+                                </label>
+                                <input
+                                    type="password"
+                                    id="password"
+                                    value={formData.password}
+                                    onChange={handleInputChange}
+                                    placeholder="Enter password"
+                                    required
+                                    className="w-full h-12 px-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#ff6900] focus:border-transparent outline-none transition-all"
+                                />
+                            </div>
+
+                            <div className="flex justify-between items-center">
+                                <div className="flex items-center">
+                                    <input
+                                        type="checkbox"
+                                        id="rememberMe"
+                                        checked={formData.rememberMe}
+                                        onChange={handleInputChange}
+                                        className="w-4 h-4 text-cyan-500 border-gray-300 rounded focus:ring-cyan-500 focus:ring-2"
+                                    />
+                                    <label htmlFor="rememberMe" className="ml-2 text-sm text-gray-600">
+                                        Remember me
+                                    </label>
+                                </div>
+                                <button
+                                    type="button"
+                                    onClick={handleForgotPassword}
+                                    className="text-sm text-[#ff6900] hover:text-[grey] transition-colors"
+                                >
+                                    I forgot my password
+                                </button>
+                            </div>
+
+                            <button
+                                type="submit"
+                                className="w-full h-12 bg-[#ff6900] text-white rounded-xl font-medium hover:from-white hover:to-white hover:text-[white] hover:border hover:border-[#ffaa00] transition-all duration-500 transform hover:scale-105"
+                            >
+                                Sign In
+                            </button>
+                        </form>
+
+                        {/* <div className="mt-8 p-4 bg-[#ffe4bc] border-blue-200 rounded-lg">
+                            <p className="text-blue-800 text-sm font-medium mb-2">Demo Credentials:</p>
+                            <p className="text-blue-700 text-xs">Email: user@example.com</p>
+                            <p className="text-blue-700 text-xs">Password: password123</p>
+                        </div> */}
+                    </div>
+                </div>
+            </div>
+
+            <div className="w-full lg:w-1/2  lg:min-h-screen">
+                <img src="/img/logReg1.jpg" alt="" className='object-cover h-[600px] w-full' />
+                {/* <div className="absolute inset-0 flex items-center justify-center p-8">
+                    <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center max-w-md">
+                        <div className="w-24 h-24 bg-white/20 rounded-full mx-auto mb-6 flex items-center justify-center">
+                            <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.031 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                            </svg>
+                        </div>
+                        <h3 className="text-white text-xl font-semibold mb-2">Secure Login</h3>
+                        <p className="text-white/80 text-sm">
+                            Your data is protected with enterprise-grade security. Sign in safely and access your personalized dashboard.
+                        </p>
+                    </div>
+                </div>
+                <div className="absolute top-16 right-16 w-16 h-16 bg-white/10 rounded-full animate-pulse"></div>
+                <div className="absolute bottom-24 left-12 w-24 h-24 bg-white/5 rounded-full animate-pulse delay-1000"></div>
+                <div className="absolute top-1/3 right-24 w-8 h-8 bg-white/20 rounded-full animate-pulse delay-500"></div> */}
+                {/* <div className="absolute inset-0 overflow-hidden">
+                    <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-white/30 rounded-full animate-bounce"></div>
+                    <div className="absolute top-3/4 right-1/3 w-1 h-1 bg-white/20 rounded-full animate-bounce delay-700"></div>
+                </div> */}
+            </div>
+        </div>
+    );
+};
+
+export default LoginForm;
+
 
 
