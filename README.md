@@ -336,3 +336,271 @@ export default Home;
 //   font-family: 'Pacifico', cursive;
 // }
 
+#AboutUS.js
+
+import React from "react";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+import crousel1 from '../aboutimg/crousel1.jpg';
+import crousel2 from '../aboutimg/crousel2.jpg';
+import crousel3 from '../aboutimg/crousel3.jpg';
+import crousel4 from '../aboutimg/crousel4.jpg';
+import crousel5 from '../aboutimg/crousel5.jpg';
+// Hotel images
+import image1 from "../Images/image1.png"
+import image3 from "../Images/image3.png"
+import image4 from "../Images/image4.png"
+import image5 from "../Images/image5.png"
+import Container1 from "../Images/Container1.png"
+import Container2 from "../Images/Container2.png"
+import Container3 from "../Images/Container3.png"
+import Container4 from "../Images/Container4.png"
+
+
+// offers
+import img1 from "../Images/img1.png"
+import img2 from "../Images/img2.png"
+import img3 from "../Images/img3.png"
+import holeimg from "../Images/holeimg.png"
+import employee1 from "../Images/employee1.png"
+import employee3 from "../Images/employee3.png"
+import employee4 from "../Images/employee4.jpg"
+
+
+
+const AboutUs = () => {
+    return (
+        <>
+            <div className="w-full min-h-screen  py-10">
+                <h1 className="text-4xl md:text-5xl font-bold ml-30 mb-10">About Us</h1>
+
+                <div className="w-[90%] max-w-12xl mx-auto">
+                    <Swiper
+                        modules={[Navigation, Pagination, Autoplay]}
+                        spaceBetween={30}
+                        slidesPerView={1}
+                        navigation
+                        pagination={{ clickable: true }}
+                        autoplay={{ delay: 3000 }}
+                        loop
+                        className="rounded-2xl overflow-hidden"
+                    >
+                        {[crousel1, crousel2, crousel3, crousel4, crousel5].map((image, index) => (
+                            <SwiperSlide key={index}>
+                                <img src={image} alt={`crousel${index + 1}`} className="w-full h-[300px] md:h-[500px] object-cover" />
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
+                </div>
+            </div>
+
+            <div className="w-full h-[40rem] bg-white">
+                <h1 className="text-center italic text-6xl">Featured Ginger Hotels</h1>
+
+                <div className="w-full h-[28rem] bg-blue-50  flex gap-4 rounded-2xl mt-13">
+                    <div className="w-[24%] h-[28rem] bg-white shadow-2xl rounded-2xl">
+                        <div className="w-full h-[12rem] bg-white rounded-2xl ">
+                            <img className="w-full h-[12rem]" src={image1} alt="image1" />
+                        </div>
+                        <div className="w-[95%] h-[12rem] bg-white ml-[2.5%]">
+                            <img className="w-full h-[12rem] " src={Container1} alt="Container1" />
+                        </div>
+                        <div className="w-full h-[3.2rem] bg-white flex gap-5 ">
+                            <p className="ml-3 text-orange-700 underline ">View Hotel</p>
+                            <button className="w-[49%] h-[2.5rem] bg-orange-400 rounded-full ... tect-xl  font-bold text-white hover:bg-red-600" >Book Your Stay</button>
+                        </div>
+
+                    </div>
+                    <div className="w-[24%] h-[28rem] bg-white rounded-2xl shadow-2xl">
+                        <div className="w-full h-[12rem] bg-white rounded-2xl">
+                            <img className="w-full h-[12rem]" src={image3} alt="image3" />
+                        </div>
+                        <div className="w-[95%] h-[12rem] bg-white ml-[2.5%]">
+                            {/* <p className="w-[98%] h-[2rem] bg-blue-400 text-xl font-bold">Ginger Diu, Jalandhar Beach</p> */}
+                            <img className="w-full h-[12rem] " src={Container2} alt="Container3" />
+
+                        </div>
+                        <div className="w-full h-[3.2rem] bg-white flex gap-5 ">
+                            <p className="ml-3 text-orange-700 underline ">View Hotel</p>
+                            <button className="w-[49%] h-[2.5rem] bg-orange-400 rounded-full ... tect-xl  font-bold text-white hover:bg-orange-600" >Book Your Stay</button>
+                        </div>
+                    </div>
+
+                    <div className="w-[24%] h-[28rem] bg-white rounded-2xl shadow-2xl">
+                        <div className="w-full h-[12rem] bg-white rounded-2xl">
+                            <img className="w-full h-[12rem]" src={image4} alt="image4" />
+                        </div>
+                        <div className="w-[95%] h-[12rem] bg-white ml-[2.5%]">
+                            {/* <p className="w-[95%] h-[2rem] bg-blue-400 text-xl font-bold">Ginger Mumbai, Airport</p> */}
+                            <img className="w-full h-[12rem] " src={Container3} alt="Container3" />
+
+                        </div>
+                        <div className="w-full h-[3.2rem] bg-white flex gap-5 ">
+                            <p className="ml-3 text-orange-700 underline">View Hotel</p>
+                            <button className="w-[49%] h-[2.5rem] bg-orange-400 rounded-full ... tect-xl  font-bold text-white hover:bg-orange-600" >Book Your Stay</button>
+                        </div>
+                    </div>
+
+                    <div className="w-[24%] h-[28rem] bg-white rounded-2xl shadow-2xl">
+                        <div className="w-full h-[12rem] bg-white rounded-2xl">
+                            <img className="w-full h-[12rem]" src={image5} alt="image5" />
+                        </div>
+                        <div className="w-[95%] h-[12rem] bg-white ml-[2.5%]">
+                            {/* <p className="w-[95%] h-[2rem] bg-blue-400 text-xl font-bold">Ginger Goa, Candolim</p> */}
+                            <img className="w-full h-[12rem] " src={Container4} alt="Container4" />
+
+                        </div>
+                        <div className="w-full h-[3.2rem] bg-white flex gap-5 ">
+                            <p className="ml-3 text-orange-700 underline ">View Hotel</p>
+                            <button className="w-[49%] h-[2.5rem] bg-orange-400 rounded-full ... text-xl  font-bold text-white hover:bg-orange-600" >Book Your Stay</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div className="w-full h-[36rem] bg-white">
+                <div className="w-full h-[6rem] bg-white">
+                    <h1 className="text-6xl text-center font-bold italic">Offers</h1>
+                </div>
+
+                <div className="w-full h-[25rem] bg-white ">
+                    <div className="w-[75%] h-[25rem]  ml-[12%] flex gap-2" >
+                        <div className="w-[34%] h-[25rem] bg-white rounded-2xl shadow-2xl">
+                            <div className="w-full h-[11rem] bg-white rounded-2xl ">
+                                <img className="w-full h-[11rem]" src={img1} alt="img1" />
+                            </div>
+                            <p className="w-[80%] h-10 bg-white text-xl font-bold ml-3 ">Cherishing Togetherness</p>
+                            <p className="w-full h-20 bg-white text-sm text-center">This cricket season, enjoy 25% savings on breakfast-
+                                inclusive stays and more as our valued NeuPass members....</p>
+                            <div className="w-[38%] h-10 rounded-2xl bg-orange-500 ml-3 mt-4 text-center hover:bg-red-600">
+                                <button className="w-[35%] h-10  rounded-2xl">Login/join</button>
+                            </div>
+                            <p className="text-orange-700 ml-40 text-xl fond-bold ">Know More</p>
+                        </div>
+
+                        <div className="w-[34%] h-[25rem] bg-white rounded-2xl shadow-2xl">
+                            <div className="w-full h-[11rem] bg-white rounded-2xl ">
+                                <img className="w-full h-[11rem]" src={img2} alt="img2" />
+                            </div>
+                            <p className="w-[80%] h-10 bg-white text-xl font-bold ml-3 ">Breakfast Inclusive Rate</p>
+                            <p className="w-full h-20 bg-white text-sm text-center">Wake up to a symphony of flavours with our delectable
+                                breakfast spread and enjoy seamless internet
+                                connectivity and flexible cancellation for that add...</p>
+                            <div className="w-[38%] h-10 rounded-2xl bg-orange-500 ml-3 mt-4 text-center hover:bg-orange-800">
+                                <button className="w-[35%] h-10  rounded-2xl  ">Login/join</button>
+                            </div>
+                            <p className="text-orange-700 ml-40 text-xl fond-bold underline">Know More</p>
+
+                        </div>
+
+                        <div className="w-[34%] h-[25rem] bg-white rounded-2xl shadow-2xl">
+                            <div className="w-full h-[11rem] bg-white rounded-2xl ">
+                                <img className="w-full h-[11rem]" src={img3} alt="img3" />
+                            </div>
+                            <p className="w-[80%] h-10 bg-white text-xl font-bold ml-3 ">New Beginnings</p>
+                            <p className="w-full h-20 bg-white text-sm text-center">Indulge the explorer in you and set out to discover our
+                                newest hotels and novel experiences. Enjoy exclusive
+                                25% savings on breakfast-inclusive rates ...</p>
+                            <div className="w-[38%] h-10 rounded-2xl bg-orange-500 ml-3 mt-4 text-center hover:bg-pink-800">
+                                <button className="w-[35%] h-10  rounded-2xl ">Login/join</button>
+                            </div>
+                            <p className="text-orange-700 ml-40 text-xl fond-bold underline">Know More</p>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div className="w-[95%] h-[30rem] bg-white ml-[2.5%] mt-10">
+                <h1 className="text-5xl text-center font-bold italic">Meet. Connect. Be Social</h1>
+                <div className="w-[90%] h-[22rem] bg-white ml-[5%] mt-3 flex gap-10">
+                    <div className="w-[65%] h-[20rem] bg-white ml-5 rounded-2xl mt-3  ">
+                        <img className="w-full h-[20rem] " src={holeimg} alt="holeimg" />
+                    </div>
+                    <div className="w-[40%] h-[20rem] bg-white mt-3 rounded-xl">
+                        <div className="w-35 h-15 mt-5 ml-3 bg-white"><h1 className="italic">Qmin</h1></div>
+                        <div className="w-full h-[9rem]"><p className="italic">Looking for a delightful escape from the bustling city? Step into Qmin at
+                            Ginger Hotels and immerse yourself in a world of vibrant flavours,
+                            refreshing beverages, and big-screen thrills. Discover a colourful setting
+                            where you can relish delicious food and create joyful memories with your
+                            favourite people.</p></div><br></br>
+                        <div className="w-34 h-11 bg-orange-400 ml-4 rounded-2xl">
+                            <button className="text-center w-full h-11">Feel the buzz</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div className="w-full h-[53rem] bg-blue-400">
+                <div className="w-[50%] h-[52rem] bg-pink-500">
+                    <div className="w-full h-[17rem] bg-blue-200 flex flex-nowrap ">
+                        <div className="w-[35%] h-[17rem] bg-yellow-400">
+                            <div className="w-full h-[17rem] bg-pink-600">
+                                <img className="h-full" src={employee1} alt="employee1" />
+                            </div>
+                        </div>
+
+                        <div className="w-[65%] h-[17rem]">
+                            <h1 className="text-3xl ml-35 text-bolt">AYESHA KHAN </h1><br></br>
+                            <p className="text-xl ml-5 "> About AYESHA KHAN
+                                AYESHA KHAN is a director registered with Ministry of Corporate Affairs.
+                                Their Director Identification Number (DIN) is 08556908.
+                                AYESHA KHAN is/has been associated with 2 companies.</p>
+                        </div>
+
+                    </div>
+
+                    <div className="w-full h-[17rem] bg-blue-200 flex flex-nowrap ">
+                        <div className="w-[35%] h-[17rem] bg-yellow-400">
+                            <div className="w-full h-[17rem] bg-pink-600">
+                                <img className="h-full" src={employee3} alt="employee3" />
+                            </div>
+                        </div>
+
+                        <div className="w-[65%] h-[17rem]">
+                            <h1 className="text-3xl ml-35 text-bolt">Md Ayyub KHAN </h1><br></br>
+                            <p className="text-xl ml-5 "> About AYESHA KHAN
+                                AYESHA KHAN is a director registered with Ministry of Corporate Affairs.
+                                Their Director Identification Number (DIN) is 08556908.
+                                AYESHA KHAN is/has been associated with 2 companies.</p>
+                        </div>
+
+                    </div>
+
+                    <div className="w-full h-[17rem] bg-blue-200 flex flex-nowrap ">
+                        <div className="w-[35%] h-[17rem] bg-yellow-400">
+                            <div className="w-full h-[17rem] bg-pink-600">
+                                <img className="h-full" src={employee4} alt="employee4" />
+                            </div>
+                        </div>
+
+                        <div className="w-[65%] h-[17rem]">
+                            <h1 className="text-3xl ml-35 text-bolt">Md Aarib f </h1><br></br>
+                            <p className="text-xl ml-5 "> About AYESHA KHAN
+                                AYESHA KHAN is a director registered with Ministry of Corporate Affairs.
+                                Their Dir ector Identification Number (DIN) is 08556908.
+                                AYESHA KHAN is/has been associated with 2 companies.</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div className="w-[50%] h-[20rem] bg-pink-300"></div>
+
+            </div>
+        </>
+    );
+};
+
+export default AboutUs;
+
+
